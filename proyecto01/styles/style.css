@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    --text-color-primary: #FFFFFF;
+    --title-color-primary: #00A7E1;
+    --background-image-color-primary: #007EA7;
+    --background-color-primary: #00171F;
+    --background-card-color-primary: #FFFFFF;
+    --button-color-primary: #00A7E1;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+    background-color: var(--background-color-primary);
+}
+
+li {
+    color: var(--text-color-primary);
+}
+
+.home__title {
+    color: var(--text-color-primary);
+}
+
+.home__title-name {
+    background: linear-gradient(to right top, #003459, #064e7a, #0b6a9c, #0a88be, #00a7e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
