@@ -1,107 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CV Dilan Morales</title>
+		<link rel="stylesheet" href="styles/reset.css" />
+		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Dilan Morales</title>
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-</head>
+	<body>
+		<header>
+			<h1></h1>
+			<nav class="header__nav">
+				<ul class="header__nav__list">
+					<li class="header__nav__list__item">Home</li>
+					<li class="header__nav__list__item">Acerca de mi</li>
+					<li class="header__nav__list__item">Proyectos</li>
+					<li class="header__nav__list__item">Contacto</li>
+				</ul>
+			</nav>
+		</header>
 
-<body>
-    <header>
-        <h1></h1>
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Acerca de mi</li>
-                <li>Proyectos</li>
-                <li>Contacto</li>
-            </ul>
-        </nav>
-    </header>
+		<!-- home -->
+		<section id="home">
+			<article class="home__information">
+				<h2 class="home__information__title">
+					Hola, soy <span class="home__information__title-name">Dilan Morales</span>
+				</h2>
+				<h3 class="home__information__subtitle">Desarrollador Back End</h3>
+				<ul class="home__information__list">
+					<li class="home__information__list__item">🇪🇨 Nacido en Ecuador</li>
+					<li class="home__information__list__item">🤘 Amante del metal</li>
+					<li class="home__information__list__item">💻 Desarrollador en COBISCORP</li>
+					<li class="home__information__list__item">🤓 2 años de experiencia</li>
+				</ul>
+				<button class="home__information__button">Curriculum</button>
+			</article>
+			<figure class="home__figure">
+				<img class="home__figure__image" src="images/dilan.png" alt="" />
+			</figure>
+		</section>
 
-    <!-- home -->
-    <section id="home">
-        <article>
-            <h2 class="home__title">Hola, soy <span class="home__title-name">Dilan Morales</span></h2>
-            <h3></h3>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <button>Curriculum</button>
-        </article>
-        <figure>
-            <img src="" alt="">
-        </figure>
+		<!-- acerca de -->
+		<section id="about-me">
+			<h2>😎 Acerca de mi</h2>
+			<p class="about-me__paragraph">
+				Hola, me llamo Dilan Morales soy un programador de la ciudad de Guayaquil-Ecuador,
+				amante del desarrollo y los nuevos retos.
+			</p>
+			<p class="about-me__paragraph">
+				Mis comienzos en este mundo fueron ya hace 4 años con el lenguaje Python donde programe
+				una clasica aplicacion de calculadora y donde me enamore del desarrollo.
+			</p>
+			<p class="about-me__paragraph">
+				En un inicio mi interes era aprender diseño web pero con el tiempo le encontre el
+				gustito a las tecnologias del backend, por lo que me centre en aprender Java.
+			</p>
+			<br />
+			<p class="about-me__paragraph">
+				Las tecnologias que manejo actualmente son las siguientes:
+			</p>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</section>
 
-    </section>
+		<!-- skills -->
+		<section id="skills">
+			<h2>💪 Habilidades e Idiomas</h2>
+			<!-- consula -->
+			<div class="skills__console">
+				<div class="skills__console__task">
+					<div class="skills__console__task__buttons">
+						<div class="skills__console__task__buttons__circle"></div>
+						<div class="skills__console__task__buttons__circle"></div>
+						<div class="skills__console__task__buttons__circle"></div>
+					</div>
+				</div>
+				<div class="skills__console__information">
+					<div class="skills__console__information__command">
+						<p>~/Skills $</p>
+					</div>
+					<table class="skills__console__information__table">
+						<thead>
+							<th></th>
+							<th>BAJO</th>
+							<th>NORMAL</th>
+							<th>ALTO</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>TRABAJO EN EQUIPO</td>
+								<td><span class="fa fa-star checked"></span></td>
+								<td><span class="fa fa-star checked"></span></td>
+								<td><span class="fa fa-star checked"></span></td>
+							</tr>
+							<tr>
+								<td>TRABAJO BAJO PRESION</td>
+								<td><span class="fa fa-star checked"></span></td>
+								<td><span class="fa fa-star checked"></span></td>
+								<td><span class="fa fa-star checked"></span></td>
+							</tr>
+							<tr>
+								<td>RESOLUCION DE PROBLEMAS</td>
+								<td><span class="fa fa-star checked"></span></td>
+								<td><span class="fa fa-star checked"></span></td>
+								<td><span class="fa fa-star checked"></span></td>
+							</tr>
+							<tr>
+								<td>INGLES</td>
+								<td><span class="fa fa-star checked"></span></td>
+								<td><span class="fa fa-star"></span></td>
+								<td><span class="fa fa-star"></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
 
-    <!-- acerca de -->
-    <section id="about-me">
-        <h2></h2>
-        <p></p>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </section>
+		<!-- proyectos -->
+		<section id="projects">
+			<h2>💻 Proyectos</h2>
+			<!-- carousel  -->
+			<div>
+				<article></article>
+				<article></article>
+				<article></article>
+				<article></article>
+			</div>
+		</section>
 
-    <!-- skills -->
-    <section id="skills">
-        <h2></h2>
-        <!-- consula -->
-        <div></div>
-    </section>
+		<!-- contacto -->
+		<section id="contact">
+			<h2>🤔 ¿Cómo me contactas?</h2>
+			<!-- mapa -->
+			<figure id="contact__figure-map">
+				<iframe src="" frameborder="0"></iframe>
+			</figure>
 
-    <!-- proyectos -->
-    <section id="projects">
-        <h2></h2>
-        <!-- carousel  -->
-        <div>
-            <article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-        </div>
-    </section>
+			<form id="contact__form">
+				<input type="text" name="" id="" placeholder="Nombre Completo" />
+				<br />
+				<input type="text" name="" id="" placeholder="Correo" />
+				<br />
+				<textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+				<br />
+				<input type="submit" value="Enviar" />
+			</form>
+		</section>
 
-    <!-- contacto -->
-    <section id="contact">
-        <h2></h2>
-        <!-- mapa -->
-        <figure id="contact__figure-map">
-            <iframe src="" frameborder="0"></iframe>
-        </figure>
-
-        <form id="contact__form">
-            <input type="text" name="" id="" placeholder="Nombre Completo">
-            <br>
-            <input type="text" name="" id="" placeholder="Correo">
-            <br>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
-            <br>
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
-
-
-    <footer>
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
-        <p></p>
-    </footer>
-</body>
-
+		<footer>
+			<a href=""></a>
+			<a href=""></a>
+			<a href=""></a>
+			<p>Pagina diseñada y creada con ❤️ por Dilan Morales</p>
+		</footer>
+	</body>
 </html>
