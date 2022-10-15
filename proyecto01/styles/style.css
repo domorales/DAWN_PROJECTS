@@ -1,29 +1,179 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
 :root {
-    --text-color-primary: #FFFFFF;
-    --title-color-primary: #00A7E1;
-    --background-image-color-primary: #007EA7;
-    --background-color-primary: #00171F;
-    --background-card-color-primary: #FFFFFF;
-    --button-color-primary: #00A7E1;
-    font-family: 'JetBrains Mono', monospace;
+	--text-color-primary: #ffffff;
+	--title-color-primary: #00a7e1;
+	--background-image-color-primary: #007ea7;
+	--background-color-primary: #00171f;
+	--background-card-color-primary: #ffffff;
+	--button-color-primary: #00a7e1;
+	font-family: 'JetBrains Mono', monospace;
+}
+
+* {
+	scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--background-color-primary);
+	background-color: var(--background-color-primary);
+	color: var(--text-color-primary);
 }
 
-li {
-    color: var(--text-color-primary);
+section {
+	margin: 3rem 2rem;
 }
 
-.home__title {
-    color: var(--text-color-primary);
+.header__nav__list {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 1rem 1rem;
 }
 
-.home__title-name {
-    background: linear-gradient(to right top, #003459, #064e7a, #0b6a9c, #0a88be, #00a7e1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* INICIO ESTILOS SECCION HOME */
+#home {
+	display: flex;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between;
 }
+
+.home__information {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.home__information__title {
+	font-size: 2.8rem;
+}
+
+.home__information__title-name {
+	background: linear-gradient(to right top, #003459, #064e7a, #0b6a9c, #0a88be, #00a7e1);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.home__information__subtitle {
+	font-size: 1.3rem;
+}
+
+.home__information__list {
+	padding: 0 0.1rem;
+}
+
+.home__information__list__item {
+	font-size: 1.4rem;
+}
+
+.home__information__button {
+	margin: auto;
+	color: var(--text-color-primary);
+	font-size: 1.3rem;
+	background-color: var(--button-color-primary);
+	border: 0;
+	border-radius: 0.3rem;
+	padding: 0.5rem;
+}
+
+.home__figure {
+	display: flex;
+	justify-content: center;
+	background-color: var(--background-image-color-primary);
+	border-radius: 100%;
+	width: 26rem;
+	height: 26rem;
+	margin: auto;
+}
+
+.home__figure__image {
+	border-radius: 110px;
+}
+/* FIN ESTILOS SECCION HOME */
+
+/* INICIO ESTILOS SECCION ACERCA DE MI */
+.about-me__paragraph {
+	font-size: 1.2rem;
+}
+/* FIN ESTILOS SECCION ACERCA DE MI  */
+
+/* INICIO ESTILOS SECCION SKILLS*/
+.skills__console {
+	width: 80%;
+	height: 18rem;
+	background-color: #3d4347;
+	margin: auto;
+	position: relative;
+	border-radius: 1rem;
+	font-size: 0.7rem;
+}
+
+.skills__console__task {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 10%;
+	margin: 0;
+	background-color: #000000;
+	border-radius: 1rem 1rem 0 0;
+}
+
+.skills__console__task__buttons {
+	display: flex;
+}
+
+.skills__console__task__buttons__circle {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 100%;
+	margin: 0.5rem 0.5rem;
+}
+
+.skills__console__task__buttons__circle:nth-child(1) {
+	background-color: #1dc618;
+}
+.skills__console__task__buttons__circle:nth-child(2) {
+	background-color: #efe330;
+}
+.skills__console__task__buttons__circle:nth-child(3) {
+	background-color: #ef3030;
+}
+.skills__console__information {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 2.4rem;
+	height: 70%;
+	width: 100%;
+}
+
+.skills__console__information__command {
+	display: block;
+	width: 100%;
+}
+
+.skills__console__information__command p {
+	color: var(--button-color-primary);
+	margin-left: 0.3rem;
+}
+
+.skills__console__information__table {
+	overflow-x: auto;
+	width: 80%;
+}
+.skills__console__information__table .checked {
+	color: orange;
+}
+
+.skills__console__information__table .fa-star:before {
+	margin: 1rem;
+}
+
+th,
+td {
+	border-style: dotted;
+	padding: 0.1rem;
+}
+
+/* FIN ESTILOS SECCION SKILLS */
