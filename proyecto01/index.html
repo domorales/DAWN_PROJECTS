@@ -18,13 +18,14 @@
 
 	<body>
 		<header>
-			<h1></h1>
+			<i class="fa-solid fa-bars header__hamburguer"></i>
 			<nav class="header__nav">
+				<i class="fa-solid fa-xmark header__nav__exit"></i>
 				<ul class="header__nav__list">
-					<li class="header__nav__list__item">Home</li>
-					<li class="header__nav__list__item">Acerca de mi</li>
-					<li class="header__nav__list__item">Proyectos</li>
-					<li class="header__nav__list__item">Contacto</li>
+					<li class="header__nav__list__item"><a href="#home">Home</a></li>
+					<li class="header__nav__list__item"><a href="#about-me">Acerca de mi</a></li>
+					<li class="header__nav__list__item"><a href="#projects">Proyectos</a></li>
+					<li class="header__nav__list__item"><a href="#contact">Contacto</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -32,17 +33,21 @@
 		<!-- home -->
 		<section id="home">
 			<article class="home__information">
-				<h2 class="home__information__title">
+				<h1 class="home__information__title">
 					Hola, soy <span class="home__information__title-name">Dilan Morales</span>
-				</h2>
+				</h1>
 				<h3 class="home__information__subtitle">Desarrollador Back End</h3>
 				<ul class="home__information__list">
 					<li class="home__information__list__item">🇪🇨 Nacido en Ecuador</li>
 					<li class="home__information__list__item">🤘 Amante del metal</li>
-					<li class="home__information__list__item">💻 Desarrollador en COBISCORP</li>
+					<li class="home__information__list__item">💻 Desarrollador en Cobis Topaz</li>
 					<li class="home__information__list__item">🤓 2 años de experiencia</li>
 				</ul>
-				<button class="home__information__button">Curriculum</button>
+
+				<button class="home__information__button">
+					<i class="fa-sharp fa-solid fa-circle-down"></i>
+					Curriculum
+				</button>
 			</article>
 			<figure class="home__figure">
 				<img class="home__figure__image" src="images/dilan.png" alt="" />
@@ -57,12 +62,13 @@
 				amante del desarrollo y los nuevos retos.
 			</p>
 			<p class="about-me__paragraph">
-				Mis comienzos en este mundo fueron ya hace 4 años con el lenguaje Python donde programe
+				Mis comienzos en este mundo fueron hace 4 años con el lenguaje Python donde programe
 				una clasica aplicacion de calculadora y donde me enamore del desarrollo.
 			</p>
 			<p class="about-me__paragraph">
 				En un inicio mi interes era aprender diseño web pero con el tiempo le encontre el
-				gustito a las tecnologias del backend, por lo que me centre en aprender Java.
+				gustito a las tecnologias del Back End, por lo que me centre en aprender Java pero sin
+				dejar de lado el Front End
 			</p>
 			<br />
 			<p class="about-me__paragraph">
@@ -151,11 +157,86 @@
 		<section id="projects">
 			<h2>💻 Proyectos</h2>
 			<!-- carousel  -->
-			<div>
-				<article></article>
-				<article></article>
-				<article></article>
-				<article></article>
+			<div class="projects">
+				<ul class="projects__list">
+					<li class="projects__list__item">
+						<img class="projects__list__item__image" src="images/image.png" alt="" />
+						<div class="projects__list__item__information">
+							<h3>Clima Scraping</h3>
+							<div class="projects__list__item__information__tecnologies">
+								<h4>Node JS</h4>
+								<h4>Bootstrap</h4>
+							</div>
+							<div class="projects__list__item__information__links">
+								<a href="https://github.com/domorales/weather-scraping"
+									><i class="fa-brands fa-github"></i
+								></a>
+								<a href="https://github.com/domorales/weather-scraping"
+									><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i
+								></a>
+							</div>
+						</div>
+					</li>
+					<li class="projects__list__item">
+						<img class="projects__list__item__image" src="images/image.png" alt="" />
+						<div class="projects__list__item__information">
+							<h3>Clima Scraping</h3>
+							<div class="projects__list__item__information__tecnologies">
+								<h4>Node JS</h4>
+								<h4>Bootstrap</h4>
+							</div>
+							<div class="projects__list__item__information__links">
+								<a href="https://github.com/domorales/weather-scraping"
+									><i class="fa-brands fa-github"></i
+								></a>
+								<a href="https://github.com/domorales/weather-scraping"
+									><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i
+								></a>
+							</div>
+						</div>
+					</li>
+					<li class="projects__list__item">
+						<img class="projects__list__item__image" src="images/image.png" alt="" />
+						<div class="projects__list__item__information">
+							<h3>Clima Scraping</h3>
+							<div class="projects__list__item__information__tecnologies">
+								<h4>Node JS</h4>
+								<h4>Bootstrap</h4>
+							</div>
+							<div class="projects__list__item__information__links">
+								<a href="https://github.com/domorales/weather-scraping"
+									><i class="fa-brands fa-github"></i
+								></a>
+								<a href="https://github.com/domorales/weather-scraping"
+									><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i
+								></a>
+							</div>
+						</div>
+					</li>
+					<li class="projects__list__item">
+						<img class="projects__list__item__image" src="images/image.png" alt="" />
+						<div class="projects__list__item__information">
+							<h3>Clima Scraping</h3>
+							<div class="projects__list__item__information__tecnologies">
+								<h4>Node JS</h4>
+								<h4>Bootstrap</h4>
+							</div>
+							<div class="projects__list__item__information__links">
+								<a href="https://github.com/domorales/weather-scraping"
+									><i class="fa-brands fa-github"></i
+								></a>
+								<a href="https://github.com/domorales/weather-scraping"
+									><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i
+								></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="projects__indicator">
+					<li class="projects__indicator__item">1</li>
+					<li class="projects__indicator__item">2</li>
+					<li class="projects__indicator__item">3</li>
+				</ul>
 			</div>
 		</section>
 
@@ -204,4 +285,5 @@
 			<p>Pagina diseñada y creada con 💜 por Dilan Morales</p>
 		</footer>
 	</body>
+	<script src="js/main.js"></script>
 </html>
