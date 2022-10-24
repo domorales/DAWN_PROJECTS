@@ -7,10 +7,25 @@
 	--background-color-primary: #00171f;
 	--background-card-color-primary: #ffffff;
 	--button-color-primary: #00a7e1;
-	font-family: 'JetBrains Mono', monospace;
 }
 
 * {
+	font-family: 'JetBrains Mono', monospace;
+}
+
+::-webkit-scrollbar {
+	width: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--background-image-color-primary);
+	border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+}
+
+html {
 	scroll-behavior: smooth;
 }
 
@@ -20,7 +35,7 @@ body {
 }
 
 section {
-	margin: 3rem 2rem;
+	margin: 3rem 3.5rem;
 }
 
 p {
@@ -41,12 +56,50 @@ a {
 	color: white;
 }
 
+/* INICIOO ESTILOS SECCION HEADER */
+.header__hamburguer,
+.header__nav__exit {
+	font-size: 3rem;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+
+.header__nav {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 1;
+	background-color: var(--button-color-primary);
+	transform: translateX(-100%);
+	transition: 0.4s ease-in;
+}
+
+.header__nav-active {
+	transform: translateX(0%);
+	transition: 0.4s ease-in;
+}
+
 .header__nav__list {
 	display: flex;
-	justify-content: space-evenly;
+	height: 100%;
+	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	padding: 1rem 1rem;
 }
+
+.header__nav__list__item {
+	font-size: 2rem;
+	padding: 1.5rem;
+}
+
+.header__nav__list__item a:hover {
+	cursor: pointer;
+	color: var(--background-color-primary);
+}
+/* FIN ESTILOS SECCION HEADER */
 
 /* INICIO ESTILOS SECCION HOME */
 #home {
@@ -93,6 +146,13 @@ a {
 	padding: 0.5rem;
 }
 
+.home__information__button:hover {
+	transform: scale(1.04);
+	transition: 0.3s ease-in-out;
+	-webkit-box-shadow: 3px 5px 14px -3px rgba(255, 255, 255, 0.44);
+	box-shadow: 3px 5px 14px -3px rgba(255, 255, 255, 0.44);
+}
+
 .home__figure {
 	display: flex;
 	justify-content: center;
@@ -114,7 +174,7 @@ a {
 }
 .about-me__tools {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(min(7rem, 100%), 1fr));
 	grid-gap: 0 0.3rem;
 	padding: 0;
 }
@@ -125,19 +185,17 @@ a {
 }
 .about-me__tools__item b {
 	font-size: 1.1rem;
-	margin: 0 0.2rem;
+	margin: 0 0.5rem;
 }
 /* FIN ESTILOS SECCION ACERCA DE MI  */
 
 /* INICIO ESTILOS SECCION SKILLS*/
 .skills__console {
-	width: 80%;
 	height: 18rem;
 	background-color: #3d4347;
 	margin: auto;
 	position: relative;
 	border-radius: 1rem;
-	font-size: 0.7rem;
 }
 
 .skills__console__task {
@@ -193,7 +251,6 @@ a {
 }
 
 .skills__console__information__table {
-	overflow-x: auto;
 	width: 80%;
 }
 .skills__console__information__table .checked {
@@ -210,8 +267,70 @@ td {
 	padding: 0.1rem;
 	font-size: 0.7rem;
 }
-
 /* FIN ESTILOS SECCION SKILLS */
+
+/*TODO: REALIZAR SLIDERS*/
+
+.projects {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	width: 100%;
+	margin: auto;
+}
+
+.projects__indicator {
+	display: flex;
+	justify-content: center;
+	padding: 0;
+}
+.projects__indicator__item {
+	margin: 0 0.5rem;
+	opacity: 0.5;
+}
+
+.projects__list {
+	display: flex;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-size: 1.2rem;
+}
+
+.projects__list__item {
+	width: 100%;
+	flex-shrink: 0;
+	margin: auto;
+	overflow: hidden;
+}
+
+.projects__list__item__image {
+	width: 100%;
+}
+
+.projects__list__item__information {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.projects__list__item__information * {
+	margin: 0%;
+}
+
+.projects__list__item__information__tecnologies {
+	display: flex;
+	color: var(--button-color-primary);
+	margin: 0.5rem 0;
+}
+
+.projects__list__item__information__tecnologies h4 {
+	margin: 0 0.5rem;
+}
+
+.projects__list__item__information__links a {
+	margin: 0 0.5rem;
+}
 
 /* INICIO ESTILOS SECCION CONTACTO*/
 .contact__information {
@@ -221,14 +340,14 @@ td {
 }
 
 .contact__information__figure__map {
-	width: 70%;
+	width: 90%;
 	height: 20rem;
 }
 
 .contact__information__form {
 	display: flex;
 	flex-direction: column;
-	width: 80%;
+	width: 90%;
 	margin-top: 2rem;
 	gap: 1rem;
 }
@@ -243,10 +362,9 @@ td {
 .contact__information__form button {
 	font-size: 1.3rem;
 }
-
 /* FIN ESTILOS SECCION CONTACTO*/
 
-/**/
+/* INICIO ESTILOS SECCION FOOTER*/
 footer {
 	background-color: var(--title-color-primary);
 	display: flex;
@@ -272,4 +390,92 @@ footer {
 footer p {
 	text-align: center;
 	font-size: 1rem;
+}
+/* FIN ESTILOS SECCION FOOTER*/
+
+/*
+VERSION ESCRITORIO
+*/
+@media screen and (min-width: 720px) {
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		font-size: 17px;
+	}
+
+	.header__hamburguer,
+	.header__nav__exit {
+		visibility: hidden;
+		display: none;
+	}
+
+	.header__nav {
+		position: relative;
+		transform: translateX(0%);
+		background-color: transparent;
+	}
+
+	.header__nav__list {
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	.header__nav__list__item {
+		font-size: 1.2rem;
+	}
+
+	.header__nav__list__item a:hover {
+		color: var(--button-color-primary);
+	}
+
+	.about-me__tools__item {
+		margin-left: 1rem;
+	}
+
+	.about-me__tools {
+		margin: 0 2rem;
+		grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+	}
+
+	.about-me__tools__item b {
+		font-size: 1.3rem;
+		margin-left: 0.5rem;
+	}
+
+	.skills__console {
+		width: 60%;
+		height: 25rem;
+		background-color: #3d4347;
+		margin: auto;
+		position: relative;
+		border-radius: 1rem;
+	}
+
+	.skills__console__information__command p {
+		font-size: 1rem;
+	}
+
+	th,
+	td {
+		border-style: dotted;
+		padding: 0.1rem;
+		font-size: 1rem;
+	}
+
+	.projects {
+		width: 60%;
+	}
+
+	.contact__information {
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+	.contact__information__form,
+	.contact__information__figure__map {
+		width: 45%;
+		margin-top: 0;
+	}
 }
