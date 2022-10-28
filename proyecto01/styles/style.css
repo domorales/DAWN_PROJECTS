@@ -187,7 +187,7 @@ a {
 	width: 50%;
 	margin: auto;
 	border-radius: 100%;
-	animation: rotate 10s infinite ease-in-out;
+	animation: rotate 10s infinite paused ease-in-out;
 }
 
 .multimedia__player__image-container__image {
@@ -224,7 +224,7 @@ a {
 	font-size: 2rem;
 }
 
-.multimedia__control-container__controls__play {
+.multimedia__control-container__controls__pause {
 	display: none;
 }
 
