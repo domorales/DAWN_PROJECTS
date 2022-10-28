@@ -60,7 +60,32 @@ const actionsSlider = () => {
 	}, interval);
 };
 
+const acctions_music = () => {
+	const $audio_player = d.querySelector('audio'),
+		$control_play = d.querySelector('.multimedia__control-container__controls__play'),
+		$control_pause = d.querySelector('.multimedia__control-container__controls__pause'),
+		$image = d.querySelector('.multimedia__player__image-container ');
+
+	$audio_player.play();
+	$audio_player.volume = 0.3;
+
+	$control_play.addEventListener('click', () => {
+		$audio_player.play();
+		$control_play.style.display = 'none';
+		$control_pause.style.display = 'block';
+		$image.style.animationPlayState = 'running';
+	});
+
+	$control_pause.addEventListener('click', () => {
+		$audio_player.pause();
+		$control_play.style.display = 'block';
+		$control_pause.style.display = 'none';
+		$image.style.animationPlayState = 'paused';
+	});
+};
+
 d.addEventListener('DOMContentLoaded', (event) => {
 	acctions_menu();
 	actionsSlider();
+	acctions_music();
 });

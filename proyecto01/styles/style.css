@@ -22,9 +22,6 @@
 	border-radius: 1rem;
 }
 
-::-webkit-scrollbar-track {
-}
-
 html {
 	scroll-behavior: smooth;
 }
@@ -35,7 +32,7 @@ body {
 }
 
 section {
-	margin: 3rem 3.5rem;
+	margin: 4rem 5rem;
 }
 
 p {
@@ -168,14 +165,78 @@ a {
 }
 /* FIN ESTILOS SECCION HOME */
 
+.multimedia {
+	position: absolute;
+	width: 25%;
+	bottom: 0;
+	right: 0;
+	margin: 1rem;
+	position: fixed;
+	z-index: 2;
+	background: rgba(0, 167, 225, 0.66);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(0, 167, 225, 0.42);
+}
+
+.multimedia audio {
+	display: none;
+}
+
+.multimedia__player__image-container {
+	width: 50%;
+	margin: auto;
+	border-radius: 100%;
+	animation: rotate 10s infinite ease-in-out;
+}
+
+.multimedia__player__image-container__image {
+	width: 100%;
+	border-radius: 100%;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(90deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	75% {
+		transform: rotate(270deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.multimedia__control-container__controls {
+	display: flex;
+	justify-content: center;
+	margin-top: 0.5rem;
+}
+
+.fa-play,
+.fa-pause {
+	font-size: 2rem;
+}
+
+.multimedia__control-container__controls__play {
+	display: none;
+}
+
 /* INICIO ESTILOS SECCION ACERCA DE MI */
 .about-me__paragraph {
 	font-size: 1.2rem;
 }
+
 .about-me__tools {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(min(7rem, 100%), 1fr));
-	grid-gap: 0 0.3rem;
+	grid-gap: 1rem;
 	padding: 0;
 }
 
@@ -269,8 +330,7 @@ td {
 }
 /* FIN ESTILOS SECCION SKILLS */
 
-/*TODO: REALIZAR SLIDERS*/
-
+/*INICION ESTILOS SECCION PROYECTOS*/
 .projects {
 	display: flex;
 	flex-direction: column;
@@ -285,6 +345,10 @@ td {
 	padding: 0;
 }
 .projects__indicator__item {
+	width: 0.6rem;
+	height: 0.6rem;
+	background-color: var(--background-card-color-primary);
+	border-radius: 100%;
 	margin: 0 0.5rem;
 	opacity: 0.5;
 }
@@ -316,6 +380,7 @@ td {
 
 .projects__list__item__information * {
 	margin: 0%;
+	font-size: 1.3rem;
 }
 
 .projects__list__item__information__tecnologies {
@@ -331,6 +396,11 @@ td {
 .projects__list__item__information__links a {
 	margin: 0 0.5rem;
 }
+
+.projects__list__item__information__links a i {
+	font-size: 2rem;
+}
+/*FIN ESTILOS SECCION PROYECTOS*/
 
 /* INICIO ESTILOS SECCION CONTACTO*/
 .contact__information {
@@ -396,12 +466,16 @@ footer p {
 /*
 VERSION ESCRITORIO
 */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 979px) {
 	html,
 	body {
 		margin: 0;
 		padding: 0;
-		font-size: 17px;
+		font-size: 18px;
+	}
+
+	section {
+		margin: 5rem 7rem;
 	}
 
 	.header__hamburguer,
@@ -429,6 +503,10 @@ VERSION ESCRITORIO
 		color: var(--button-color-primary);
 	}
 
+	.multimedia {
+		width: 15%;
+	}
+
 	.about-me__tools__item {
 		margin-left: 1rem;
 	}
@@ -436,6 +514,7 @@ VERSION ESCRITORIO
 	.about-me__tools {
 		margin: 0 2rem;
 		grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+		grid-gap: 2rem;
 	}
 
 	.about-me__tools__item b {
