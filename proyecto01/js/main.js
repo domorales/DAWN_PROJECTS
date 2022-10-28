@@ -61,12 +61,11 @@ const actionsSlider = () => {
 };
 
 const acctions_music = () => {
-	const $audio_player = d.querySelector('audio'),
-		$control_play = d.querySelector('.multimedia__control-container__controls__play'),
-		$control_pause = d.querySelector('.multimedia__control-container__controls__pause'),
-		$image = d.querySelector('.multimedia__player__image-container ');
+	const $audio_player = document.querySelector('audio'),
+		$control_play = document.querySelector('.multimedia__control-container__controls__play'),
+		$control_pause = document.querySelector('.multimedia__control-container__controls__pause'),
+		$image = document.querySelector('.multimedia__player__image-container ');
 
-	$audio_player.play();
 	$audio_player.volume = 0.3;
 
 	$control_play.addEventListener('click', () => {
