@@ -1,15 +1,4 @@
-body {
-	background-color: black;
-}
-h1 {
-	text-align: center;
-	color: white;
-}
-
-h2 {
-	color: white;
-	text-align: center;
-}
+@import url('base.css');
 
 #poke_container {
 	display: grid;
@@ -27,6 +16,7 @@ h2 {
 .poke_container__pokemon__body__name {
 	font-size: 1.5rem;
 	text-align: center;
+	color: black;
 }
 .poke_container__pokemon__body {
 	width: 100%;
@@ -37,40 +27,35 @@ h2 {
 	font-size: 4rem;
 }
 
-.loader {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	z-index: 1;
+h2,
+h3,
+h4 {
+	font-size: 1.6rem;
+}
+
+#poke__radar__radar {
+	color: white;
+}
+
+.dashboard__item {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-radius: 0.2rem;
+	margin: 1rem;
+	background-color: #252a34;
+	border-width: 0.01rem;
+	border-style: solid;
 }
 
-.loader img {
-	width: 10%;
-	animation: rotate 2s infinite ease-in-out;
+.poke__info__item {
+	height: 5rem;
 }
 
-@keyframes rotate {
-	0% {
-		transform: rotate(0deg);
-	}
-	25% {
-		transform: rotate(90deg);
-	}
-	50% {
-		transform: rotate(180deg);
-	}
-	75% {
-		transform: rotate(270deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+.poke__radar__image {
+	width: 100%;
 }
 
-.none {
-	display: none;
+footer p {
+	font-size: 1.2rem;
 }
