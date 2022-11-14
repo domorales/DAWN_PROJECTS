@@ -48,6 +48,10 @@ h4 {
 	border-style: solid;
 }
 
+.dashboard__item div {
+	width: 70%;
+}
+
 .poke__info__item {
 	height: 5rem;
 }

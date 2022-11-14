@@ -13,14 +13,16 @@ const dashboardContainer = () => {
 	</section>
 	<section class="row justify-content-between poke__radar animate__animated animate__fadeIn animate__slow">
 		<article class="col-11 col-md-5 dashboard__item">
-			<img class="poke__radar__image" src="" alt="" />
+			<div><img class="poke__radar__image" src="" alt="" /></div>
 		</article>
 		<article class="col-11 col-md-5 dashboard__item">
-			<canvas id="poke__radar__radar"></canvas>
+		 <div><canvas id="poke__radar__radar"></canvas></div>
 		</article>
 	</section>
 	<section class="row poke__moves animate__animated animate__fadeIn animate__slow">
-		<article class="col dashboard__item"><canvas id="poke__moves__bar"></canvas></article>
+		<article class="col dashboard__item">
+		<div><canvas id="poke__moves__bar"></canvas></div>
+		</article>
 	</section>
     `;
 };
