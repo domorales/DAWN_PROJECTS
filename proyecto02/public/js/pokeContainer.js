@@ -1,16 +1,13 @@
 const pokeContainer = () => {
 	return `
-  	<h2 class="text-bg-danger m-5 text-center">
-		Seleccione un POKEMON para visualizar sus estadisticas
-	</h2>
-	<section id="poke_container" class="m-5">
+	<section id="poke_container" class="m-4 animate__animated  animate__fadeIn animate__slow">
 		<template id="poke_container__template">
 			<article class="poke_container__pokemon card" data-id data-name>
 				<img class="poke_container__pokemon__img card-img-top"" src="" alt="" />
 				<div class="poke_container__pokemon__body card-body">
 					<h3 class="poke_container__pokemon__body__name card-text"></h3>
 				</div>
-				<a href="" class="poke_container__pokemon__button btn btn-danger" data-id=""
+				<a href="" class="poke_container__pokemon__button btn m-1" data-id data-name
 					>Dashboard</a
 				>
 			</article>

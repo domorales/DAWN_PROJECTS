@@ -1,0 +1,72 @@
+*,
+html {
+	color: white;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #f1f1f1;
+	border-radius: 1rem;
+}
+
+h1 {
+	text-align: center;
+}
+
+body {
+	background-color: black;
+}
+
+.navbar-brand img {
+	width: 50px;
+}
+
+.loader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loader img {
+	width: 10%;
+	animation: rotate 2s infinite ease-in-out;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(90deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	75% {
+		transform: rotate(270deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.none {
+	display: none;
+}
+
+#error {
+	width: 90%;
+	height: 80vh;
+	margin: auto;
+}

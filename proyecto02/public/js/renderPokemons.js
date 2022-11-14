@@ -1,20 +1,22 @@
 import PokeApi from '../../repositories/PokeApi.js';
+import { colorNametoRgb } from './constants.js';
 import errorMessage from './errorMessage.js';
 import pokeContainer from './pokeContainer.js';
 
 const d = document,
 	$main = d.querySelector('main'),
-	pokeApi = new PokeApi(),
-	$template = d.querySelector('#poke_container__template').content;
+	pokeApi = new PokeApi();
 
 const drawAllCard = async (url) => {
 	d.querySelector('.loader').classList.remove('none');
-	$main.innerHTML = pokeContainer();
-	const $poke_section = d.querySelector('#poke_container'),
-		$fragment = d.createDocumentFragment();
 
 	const { pokemons, url_previ, url_next } = await pokeApi.getPokemons(url);
-	$poke_section.innerHTML = '';
+
+	$main.innerHTML = pokeContainer();
+
+	const $template = d.querySelector('#poke_container__template').content,
+		$poke_section = d.querySelector('#poke_container'),
+		$fragment = d.createDocumentFragment();
 	for (let index in pokemons) {
 		const { image, name, color, id } = pokemons[index];
 
@@ -24,8 +26,11 @@ const drawAllCard = async (url) => {
 		$template.querySelector('.poke_container__pokemon__img').setAttribute('alt', name);
 		$template
 			.querySelector('.poke_container__pokemon__button')
-			.setAttribute('href', `dashboard.html#/${name}`);
+			.setAttribute('href', `#/${name}`);
 		$template.querySelector('.poke_container__pokemon__button').dataset.id = id;
+		$template.querySelector('.poke_container__pokemon__button').dataset.name = name;
+		$template.querySelector('.poke_container__pokemon__button').style.background =
+			colorNametoRgb[color];
 
 		$template.querySelector('.poke_container__pokemon').dataset.id = id;
 		$template.querySelector('.poke_container__pokemon').dataset.name = name;
@@ -50,22 +55,23 @@ const drawAllCard = async (url) => {
 const drawCardByName = async (namepokemon) => {
 	d.querySelector('.loader').classList.remove('none');
 	try {
-		$main.innerHTML = pokeContainer();
-		const $poke_section = d.querySelector('#poke_container'),
-			$fragment = d.createDocumentFragment();
-
-		$poke_section.innerHTML = '';
-
 		const { image, name, color, id } = await pokeApi.getPokemonByName(namepokemon);
 
+		$main.innerHTML = pokeContainer();
+		const $template = d.querySelector('#poke_container__template').content,
+			$poke_section = d.querySelector('#poke_container'),
+			$fragment = d.createDocumentFragment();
 		$template.querySelector('.poke_container__pokemon__body__name').textContent =
 			name.toUpperCase();
 		$template.querySelector('.poke_container__pokemon__img').setAttribute('src', image);
 		$template.querySelector('.poke_container__pokemon__img').setAttribute('alt', name);
 		$template
 			.querySelector('.poke_container__pokemon__button')
-			.setAttribute('href', `dashboard.html#/${name}`);
+			.setAttribute('href', `#/${name}`);
 		$template.querySelector('.poke_container__pokemon__button').dataset.id = id;
+		$template.querySelector('.poke_container__pokemon__button').dataset.name = name;
+		$template.querySelector('.poke_container__pokemon__button').style.background =
+			colorNametoRgb[color];
 
 		$template.querySelector('.poke_container__pokemon').dataset.id = id;
 		$template.querySelector('.poke_container__pokemon').dataset.name = name;
