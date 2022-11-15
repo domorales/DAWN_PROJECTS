@@ -1,6 +1,7 @@
 export default class PokeApi {
 	URL_BASE = 'https://pokeapi.co/api/v2';
 	GETPOKEMON = `${this.URL_BASE}/pokemon`;
+	GETPOKEMONBYTYPE = `${this.URL_BASE}/type`;
 
 	async getPokemons(url = this.GETPOKEMON) {
 		const pokemons = [];
@@ -35,8 +36,43 @@ export default class PokeApi {
 		return { pokemons, url_previ: json.previous, url_next: json.next };
 	}
 
+	async getPokemonsByType(type) {
+		const pokemons = [];
+		const url = `${this.GETPOKEMONBYTYPE}/${type}`;
+
+		let consult = await fetch(url);
+
+		if (!consult.ok) {
+			throw new Error('Busquedad sin exito por favor verfica si el tipo es correcto');
+		}
+		let json = await consult.json();
+		const results = json.pokemon;
+
+		for (let index in results) {
+			const { url: urlPokemon, name } = results[index].pokemon;
+			consult = await fetch(urlPokemon);
+			if (consult.status !== 200) {
+				return;
+			}
+			const pokemon = await consult.json();
+
+			consult = await fetch(pokemon.species.url);
+			const { color } = await consult.json();
+
+			pokemons.push({
+				name,
+				image: pokemon.sprites.front_default,
+				color: color.name,
+				url: urlPokemon,
+				id: pokemon.id,
+			});
+		}
+
+		return { pokemons };
+	}
+
 	async getPokemonByName(name) {
-		const url = `${this.GETPOKEMON}/${name}`;
+		const url = `${this.GETPOKEMON}/${name.toLowerCase()}`;
 		let consult = await fetch(url);
 
 		if (!consult.ok) {
