@@ -4,6 +4,7 @@ html {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -21,6 +22,18 @@ h1 {
 
 body {
 	background-color: black;
+}
+
+option {
+	color: black;
+}
+
+#search__pokemon * {
+	margin: 0.5rem;
+}
+
+#filterType {
+	display: none;
 }
 
 .navbar-brand img {
