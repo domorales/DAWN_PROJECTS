@@ -1,0 +1,18 @@
+<ng-container *ngIf="isLoggedIn$ | async; else login">
+  <ng-container *ngIf="userData$ | async as user">
+    <section
+      *ngIf="user._id"
+      class="m-5 animate__animated animate__fadeIn animate__fast"
+    >
+      <h3 class="text-center">
+        Hola {{ user.name?.firstname }} {{ user.name?.lastname }}
+      </h3>
+      <p>Correo: {{ user.email }}</p>
+      <p>Celular: {{ user.phone }}</p>
+    </section>
+  </ng-container>
+</ng-container>
+
+<ng-template #login>
+  <app-login></app-login>
+</ng-template>

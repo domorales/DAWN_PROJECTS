@@ -1,0 +1,13 @@
+<div class="d-flex flex-row">
+  <button class="btn" (click)="subtract()">-</button>
+  <input
+    type="number"
+    class="form-control"
+    value="Disabled readonly input"
+    inputmode="numeric"
+    [(ngModel)]="quantity"
+    disabled="true"
+    readonly="true"
+  />
+  <button class="btn" (click)="add()">+</button>
+</div>

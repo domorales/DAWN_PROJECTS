@@ -1,0 +1,38 @@
+<section
+  class="d-flex justify-content-center align-content-center animate__animated animate__fadeIn animate__fast"
+>
+  <article class="d-flex flex-column justify-content-center">
+    <h1 class="text-center">Iniciar sesión</h1>
+    <form class="form_center" [formGroup]="loginForm" (ngSubmit)="signIn()">
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          formControlName="username"
+          placeholder="Usuario"
+        />
+        <label for="floatingInput">Usuario</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          formControlName="password"
+          placeholder="Contraseña"
+        />
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+
+      <button
+        class="btn btn-primary"
+        [disabled]="(loginForm.statusChanges | async) !== 'VALID'"
+      >
+        Ingresar
+      </button>
+    </form>
+  </article>
+</section>
+
+<h1 *ngIf="isLoggedIn$ | async">hola mundo</h1>
