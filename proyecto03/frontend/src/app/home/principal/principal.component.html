@@ -1,0 +1,8 @@
+<app-header
+  [stateNavBar]="stateNavBar"
+  (showNavBar)="stateNavBar = !stateNavBar"
+></app-header>
+<div class="min-vh-100" (click)="hideNavBar()">
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

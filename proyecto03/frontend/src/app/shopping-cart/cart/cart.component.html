@@ -1,0 +1,70 @@
+<section class="animate__animated animate__fadeIn animate__fast">
+  <h2 class="m-3">Carrito de compras</h2>
+  <ng-container *ngIf="productsInCart$ | async as products">
+    <article *ngIf="products.length > 0; else error" class="row m-2">
+      <div class="col-md-9 col-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col" class="d-none d-md-block">Total</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products">
+              <th *ngIf="product.productId | cast as productDetail" scope="row">
+                <div
+                  class="d-flex align-items-center justify-content-evenly"
+                  (click)="navigateProduct(product.productId)"
+                >
+                  <img
+                    [src]="productDetail.image"
+                    [alt]="productDetail.title"
+                    class="d-none d-md-block"
+                  />
+                  <p>
+                    {{ (product.productId | cast).title | titlecase }}
+                  </p>
+                </div>
+              </th>
+              <td>{{ (product.productId | cast).price | currency }}</td>
+              <td>
+                <app-quantity-control
+                  [quantity]="product.quantity"
+                  (onAdd)="addProduct(product.productId)"
+                  (onSubtract)="removeProduct(product.productId)"
+                ></app-quantity-control>
+              </td>
+              <td class="d-none d-md-block">
+                {{
+                  (product.productId | cast).price * product.quantity | currency
+                }}
+              </td>
+              <td (click)="deleteProduct(product.productId)">
+                <i-feather name="delete" style="color: red"></i-feather>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-2 col-12 total">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <p>Total</p>
+          <p>
+            <b>{{ totalForProductsInCart$ | async | currency }}</b>
+          </p>
+          <hr />
+          <button class="btn btn-dark">Comprar</button>
+        </div>
+      </div>
+    </article>
+  </ng-container>
+  <ng-template #error>
+    <h3 class="text-center">No existen productos en el carrito</h3>
+  </ng-template>
+</section>

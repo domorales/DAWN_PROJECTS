@@ -1,0 +1,25 @@
+<app-input-search-product
+  (onSearch)="seachProducts($event)"
+  (onEmpty)="emptySearch()"
+></app-input-search-product>
+
+<section
+  class="container animate__animated animate__fadeIn animate__fast"
+  *ngIf="products$ | async as products"
+>
+  <ng-container *ngIf="products.length > 0; else elseBlock">
+    <div class="grid_product">
+      <app-product-card
+        class="product"
+        *ngFor="let product of products; trackBy: trackByIndex"
+        [product]="product"
+      ></app-product-card>
+    </div>
+  </ng-container>
+
+  <ng-template #elseBlock>
+    <div class="vh-100 d-flex justify-content-center align-items-center">
+      <h1>No hay productos</h1>
+    </div>
+  </ng-template>
+</section>

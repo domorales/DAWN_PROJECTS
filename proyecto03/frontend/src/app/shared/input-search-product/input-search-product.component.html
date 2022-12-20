@@ -1,0 +1,17 @@
+<section class="container-fluid">
+  <form (ngSubmit)="searchProduct()">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control search-input"
+        id="item"
+        name="item"
+        placeholder="Buscar"
+        autocomplete="off"
+        [(ngModel)]="item"
+        (keyup)="keyPress()"
+      />
+      <label for="item">Buscar</label>
+    </div>
+  </form>
+</section>
