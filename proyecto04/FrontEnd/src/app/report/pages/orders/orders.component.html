@@ -1,0 +1,6 @@
+<ng-container *ngIf="(orders$ | async) as orders">
+  <h3>Cliente: {{customerId}}</h3>
+  <section>
+    <app-orders-table [orders]="orders" [total]=" totalPrice$ | async"></app-orders-table>
+  </section>
+</ng-container>

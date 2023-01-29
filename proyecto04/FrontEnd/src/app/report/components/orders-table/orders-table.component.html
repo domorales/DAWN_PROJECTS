@@ -1,0 +1,36 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Número de Orden</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Fecha Orden</th>
+    <th scope="col">Estado</th>
+    <th scope="col">Cantidad</th>
+    <th scope="col">Precio Unidad</th>
+    <th scope="col">TOTAL</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let order of orders; trackBy: trackByIndex">
+    <th scope="row">{{order.orderNumber}}</th>
+    <td>{{order.productName}}</td>
+    <td>{{order.orderDate}}</td>
+    <td
+      [ngClass]="order.status ==='Cancelled' ? 'text-danger': 'text-success'">{{order.status}}</td>
+    <td>{{order.quantityOrdered}}</td>
+    <td>{{order.priceEach}}</td>
+    <td *ngIf="order.priceEach && order.quantityOrdered">{{calculateTotalForItem(
+      (order.priceEach | asDouble)
+      , (order.quantityOrdered | asNumber))}}</td>
+  </tr>
+  <tr>
+    <th scope="row"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="fw-bold fs-5">{{ '$' + total}}</td>
+  </tr>
+  </tbody>
+</table>

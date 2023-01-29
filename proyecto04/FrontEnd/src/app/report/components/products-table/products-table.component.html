@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Código producto</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Proveedor</th>
+    <th scope="col">Línea</th>
+    <th scope="col">Escala</th>
+    <th scope="col">Estado</th>
+    <th scope="col">Precio</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let order of orders; trackBy: trackByIndex">
+    <th scope="row">{{order.productCode}}</th>
+    <td>{{order.productName}}</td>
+    <td>{{order.productVendor}}</td>
+    <td>{{order.productLine}}</td>
+    <td>{{order.productScale}}</td>
+    <td
+      [ngClass]="order.status ==='Cancelled' ? 'text-danger': 'text-success'">{{order.status}}</td>
+    <td>{{order.priceEach}}</td>
+  </tr>
+  </tbody>
+</table>

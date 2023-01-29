@@ -1,0 +1,6 @@
+<ng-container *ngIf="(products$ | async) as products">
+  <h3>Cliente: {{customerId}}</h3>
+  <section>
+    <app-products-table [products]="products"></app-products-table>
+  </section>
+</ng-container>

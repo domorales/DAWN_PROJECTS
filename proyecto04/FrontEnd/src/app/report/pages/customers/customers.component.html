@@ -1,0 +1,5 @@
+<ng-container *ngIf="(customers$ | async) as customers">
+  <section infinite-scroll (scrolled)="onScroll()">
+    <app-client-table [customers]="customers"></app-client-table>
+  </section>
+</ng-container>
